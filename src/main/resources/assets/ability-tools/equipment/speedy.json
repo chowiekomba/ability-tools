@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "ability-tools:speedy"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "ability-tools:speedy"
+      }
+    ]
+  }
+}

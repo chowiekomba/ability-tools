@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "ability-tools:fortune"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "ability-tools:fortune"
+      }
+    ]
+  }
+}

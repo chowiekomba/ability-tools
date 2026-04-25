@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": "minecraft:gold_nugget",
+    "S": "minecraft:stick",
+    "T": "minecraft:string"
+  },
+  "pattern": [
+    "TS ",
+    "G S",
+    "TS "
+  ],
+  "result": {
+    "id": "ability-tools:fast_bow"
+  }
+}

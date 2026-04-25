@@ -1,0 +1,14 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "ability-tools:miner"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "ability-tools:miner"
+      }
+    ]
+  }
+}

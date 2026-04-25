@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "F": "minecraft:feather",
+    "L": "minecraft:leather",
+    "N": "minecraft:gold_nugget"
+  },
+  "pattern": [
+    " L ",
+    "NLN",
+    " F "
+  ],
+  "result": {
+    "id": "ability-tools:speedy_sword"
+  }
+}

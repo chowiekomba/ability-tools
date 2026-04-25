@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "H": "minecraft:hay_block"
+  },
+  "pattern": [
+    "H H",
+    "H H",
+    "   "
+  ],
+  "result": {
+    "id": "ability-tools:speedy_boots"
+  }
+}

@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:item/bow",
+  "textures": {
+    "layer0": "ability-tools:item/end_bow_pulling_2"
+  }
+}

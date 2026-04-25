@@ -1,0 +1,18 @@
+{
+  "gunshot": {
+    "subtitle": "sound.ability-tools.gunshot",
+    "sounds": ["ability-tools:gunshot"]
+  },
+  "ground_impact": {
+    "subtitle": "sound.ability-tools.ground_impact",
+    "sounds": ["ability-tools:ground_impact"]
+  },
+  "heal": {
+    "subtitle": "sound.ability-tools.heal",
+    "sounds": ["ability-tools:heal"]
+  },
+  "chaching": {
+    "subtitle": "sound.ability-tools.chaching",
+    "sounds": ["ability-tools:chaching"]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "F": "minecraft:fire_charge",
+    "I": "minecraft:iron_ingot"
+  },
+  "pattern": [
+    "   ",
+    "IIF",
+    "I  "
+  ],
+  "result": {
+    "id": "ability-tools:roid_rage_gun"
+  }
+}

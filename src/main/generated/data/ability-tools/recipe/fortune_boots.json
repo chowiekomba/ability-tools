@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "C": "minecraft:cobbled_deepslate",
+    "D": "minecraft:diamond"
+  },
+  "pattern": [
+    "C C",
+    "D D",
+    "   "
+  ],
+  "result": {
+    "id": "ability-tools:fortune_boots"
+  }
+}

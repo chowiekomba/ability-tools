@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "minecraft:blaze_rod",
+    "E": "minecraft:redstone",
+    "R": "minecraft:rose_bush"
+  },
+  "pattern": [
+    " R ",
+    " E ",
+    " B "
+  ],
+  "result": {
+    "id": "ability-tools:group_heal_sword"
+  }
+}

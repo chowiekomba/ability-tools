@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "A": "minecraft:andesite",
+    "C": "minecraft:cobbled_deepslate",
+    "D": "minecraft:diamond"
+  },
+  "pattern": [
+    "AAA",
+    "D D",
+    "C C"
+  ],
+  "result": {
+    "id": "ability-tools:fortune_leggings"
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": "minecraft:experience_bottle",
+    "I": "minecraft:iron_ingot",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    " II",
+    " EI",
+    " S "
+  ],
+  "result": {
+    "id": "ability-tools:experience_axe"
+  }
+}

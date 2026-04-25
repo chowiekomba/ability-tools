@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "E": "minecraft:emerald_block",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    " E ",
+    " E ",
+    " S "
+  ],
+  "result": {
+    "id": "ability-tools:money_sword"
+  }
+}

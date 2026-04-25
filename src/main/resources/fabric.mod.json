@@ -1,0 +1,34 @@
+{
+	"schemaVersion": 1,
+	"id": "ability-tools",
+	"version": "${version}",
+	"name": "ability tools",
+	"description": "Adds a bunch of tools and weapons to the game",
+	"authors": [
+		"chowiekomba"
+	],
+	"contact": {
+		"homepage": "https://modrinth.com/mod/ability-tools",
+		"sources": "https://github.com/chowiekomba/ability-tools"
+	},
+	"license": "Custom License",
+	"icon": "assets/ability-tools/icon.png",
+	"environment": "*",
+	"entrypoints": {
+		"main": [
+			"chowie.abilitytools.AbilityTools"
+		],
+		"fabric-datagen": [
+			"chowie.abilitytools.AbilityToolsDataGenerator"
+		]
+	},
+	"mixins": [
+		"ability-tools.mixins.json"
+	],
+	"depends": {
+		"fabricloader": ">=0.18.5",
+		"minecraft": "26.1",
+		"java": ">=25",
+		"fabric-api": "*"
+	}
+}

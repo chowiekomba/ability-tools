@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "G": "minecraft:glass",
+    "R": "minecraft:red_mushroom",
+    "S": "minecraft:stick"
+  },
+  "pattern": [
+    " G ",
+    " R ",
+    " S "
+  ],
+  "result": {
+    "id": "ability-tools:roid_rage_sword"
+  }
+}

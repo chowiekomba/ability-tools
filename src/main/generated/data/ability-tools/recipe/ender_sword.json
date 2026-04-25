@@ -1,0 +1,16 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "equipment",
+  "key": {
+    "B": "minecraft:breeze_rod",
+    "E": "minecraft:ender_pearl"
+  },
+  "pattern": [
+    " E ",
+    " E ",
+    " B "
+  ],
+  "result": {
+    "id": "ability-tools:ender_sword"
+  }
+}
