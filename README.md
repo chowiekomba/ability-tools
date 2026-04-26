@@ -160,7 +160,7 @@ Slows enemies on impact. Does more damage than the Roid Rage Gun<br>
 
 ## 🔎Contributing
 
-Issues are welcome both in my [discord](https://discord.gg/23KfgguXMC) and on [GitHub](https://github.com/ability-tools/issues)
+Issues are welcome both in my [discord](https://discord.gg/23KfgguXMC) and on [GitHub](https://github.com/chowiekomba/ability-tools/issues)
 
 ## 📜License
 
