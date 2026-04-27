@@ -78,7 +78,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .pattern("   ")
                         .pattern("IIF")
                         .pattern("I  ")
-                        .define('I', Items.IRON_INGOT)
+                        .define('I', Items.IRON_BLOCK)
                         .define('F', Items.FIRE_CHARGE)
                         .unlockedBy(getHasName(Items.FIRE_CHARGE), has(Items.FIRE_CHARGE))
                         .save(output);
@@ -162,7 +162,7 @@ public class ModRecipeProvider extends FabricRecipeProvider {
                         .define('S', Items.STICK)
                         .define('T', Items.STRING)
                         .define('G', Items.GOLD_NUGGET)
-                        .unlockedBy(getHasName(Items.LAVA_BUCKET), has(Items.LAVA_BUCKET))
+                        .unlockedBy(getHasName(Items.GOLD_NUGGET), has(Items.GOLD_NUGGET))
                         .save(output);
 
                 shaped(RecipeCategory.COMBAT, ModItems.ROID_RAGE_BOW)
