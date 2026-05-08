@@ -10,14 +10,21 @@ import net.minecraft.world.entity.ai.attributes.AttributeInstance;
 import net.minecraft.world.entity.ai.attributes.AttributeModifier;
 import net.minecraft.world.entity.ai.attributes.Attributes;
 import org.spongepowered.asm.mixin.Mixin;
+import org.spongepowered.asm.mixin.Unique;
 import org.spongepowered.asm.mixin.injection.At;
 import org.spongepowered.asm.mixin.injection.Inject;
 import org.spongepowered.asm.mixin.injection.callback.CallbackInfo;
+
+import java.util.HashSet;
+import java.util.Set;
 
 import static chowie.abilitytools.util.MixinUtil.hasFullSetOfArmor;
 
 @Mixin(LivingEntity.class)
 public abstract class LivingEntityMixin {
+
+	@Unique
+	Set<ServerPlayer> wearingFortuneArmor = new HashSet<>();
 
 	@Inject(at = @At("HEAD"), method = "detectEquipmentUpdates")
 	private void applyArmorBuffs(CallbackInfo ci) {
@@ -52,8 +59,13 @@ public abstract class LivingEntityMixin {
 		}
 
 		if (hasFullSetOfArmor(livingEntity, ModItems.FORTUNE_HELMET, ModItems.FORTUNE_CHESTPLATE, ModItems.FORTUNE_LEGGINGS,
-				ModItems.FORTUNE_BOOTS) && livingEntity instanceof ServerPlayer serverPlayer) {
-			serverPlayer.sendSystemMessage(Component.translatable("item.ability-tools.speedy_armor.notification"));
+				ModItems.FORTUNE_BOOTS) && livingEntity instanceof ServerPlayer serverPlayer &&
+				!wearingFortuneArmor.contains(serverPlayer)) {
+			serverPlayer.sendSystemMessage(Component.translatable("item.ability-tools.fortune_armor.notification"));
+			wearingFortuneArmor.add(serverPlayer);
+		} else if (livingEntity instanceof ServerPlayer player && !hasFullSetOfArmor(livingEntity, ModItems.FORTUNE_HELMET,
+				ModItems.FORTUNE_CHESTPLATE, ModItems.FORTUNE_LEGGINGS, ModItems.FORTUNE_BOOTS)) {
+			wearingFortuneArmor.remove(player);
 		}
 	}
 }

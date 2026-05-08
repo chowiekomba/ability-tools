@@ -5,7 +5,7 @@ Ability Tools is a fabric Minecraft mod that adds a bunch of tools, weapons, and
 ## 💾 Installation
 
 Download the mod on [Modrinth](https://modrinth.com/mod/ability-tools) and put it in your mods directory.<br>
-This mod require the [fabric api](https://modrinth.com/mod/fabric-api)
+This mod requires the [fabric api](https://modrinth.com/mod/fabric-api)
 
 ## 🏢 Features
 
