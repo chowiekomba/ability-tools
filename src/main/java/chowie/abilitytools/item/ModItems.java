@@ -18,10 +18,8 @@ import net.minecraft.resources.Identifier;
 import net.minecraft.resources.ResourceKey;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ToolMaterial;
-import net.minecraft.world.item.equipment.ArmorMaterials;
 import net.minecraft.world.item.equipment.ArmorType;
 
-import java.util.Properties;
 import java.util.function.Function;
 
 public class ModItems {
@@ -88,40 +86,52 @@ public class ModItems {
             new Item.Properties().pickaxe(ToolMaterial.DIAMOND, 1, -2.8f));
 
     public static final Item SPEEDY_HELMET = registerItem("speedy_helmet", Item::new, new Item.Properties()
-            .humanoidArmor(SpeedyArmorMaterial.INSTANCE, ArmorType.HELMET).durability(SpeedyArmorMaterial.BASE_DURABILITY));
+            .humanoidArmor(SpeedyArmorMaterial.INSTANCE, ArmorType.HELMET)
+            .durability(ArmorType.HELMET.getDurability(SpeedyArmorMaterial.BASE_DURABILITY)));
 
     public static final Item SPEEDY_CHESTPLATE = registerItem("speedy_chestplate", Item::new, new Item.Properties()
-            .humanoidArmor(SpeedyArmorMaterial.INSTANCE, ArmorType.CHESTPLATE).durability(SpeedyArmorMaterial.BASE_DURABILITY));
+            .humanoidArmor(SpeedyArmorMaterial.INSTANCE, ArmorType.CHESTPLATE)
+            .durability(ArmorType.CHESTPLATE.getDurability(SpeedyArmorMaterial.BASE_DURABILITY)));
 
     public static final Item SPEEDY_LEGGINGS = registerItem("speedy_leggings", Item::new, new Item.Properties()
-            .humanoidArmor(SpeedyArmorMaterial.INSTANCE, ArmorType.LEGGINGS).durability(SpeedyArmorMaterial.BASE_DURABILITY));
+            .humanoidArmor(SpeedyArmorMaterial.INSTANCE, ArmorType.LEGGINGS)
+            .durability(ArmorType.LEGGINGS.getDurability(SpeedyArmorMaterial.BASE_DURABILITY)));
 
     public static final Item SPEEDY_BOOTS = registerItem("speedy_boots", Item::new, new Item.Properties()
-            .humanoidArmor(SpeedyArmorMaterial.INSTANCE, ArmorType.BOOTS).durability(SpeedyArmorMaterial.BASE_DURABILITY));
+            .humanoidArmor(SpeedyArmorMaterial.INSTANCE, ArmorType.BOOTS)
+            .durability(ArmorType.BOOTS.getDurability(SpeedyArmorMaterial.BASE_DURABILITY)));
 
     public static final Item MINER_HELMET = registerItem("miner_helmet", Item::new, new Item.Properties()
-            .humanoidArmor(MinerArmorMaterial.INSTANCE, ArmorType.HELMET).durability(MinerArmorMaterial.BASE_DURABILITY));
+            .humanoidArmor(MinerArmorMaterial.INSTANCE, ArmorType.HELMET)
+            .durability(ArmorType.HELMET.getDurability(MinerArmorMaterial.BASE_DURABILITY)));
 
     public static final Item MINER_CHESTPLATE = registerItem("miner_chestplate", Item::new, new Item.Properties()
-            .humanoidArmor(MinerArmorMaterial.INSTANCE, ArmorType.CHESTPLATE).durability(MinerArmorMaterial.BASE_DURABILITY));
+            .humanoidArmor(MinerArmorMaterial.INSTANCE, ArmorType.CHESTPLATE)
+            .durability(ArmorType.CHESTPLATE.getDurability(MinerArmorMaterial.BASE_DURABILITY)));
 
     public static final Item MINER_LEGGINGS = registerItem("miner_leggings", Item::new, new Item.Properties()
-            .humanoidArmor(MinerArmorMaterial.INSTANCE, ArmorType.LEGGINGS).durability(MinerArmorMaterial.BASE_DURABILITY));
+            .humanoidArmor(MinerArmorMaterial.INSTANCE, ArmorType.LEGGINGS)
+            .durability(ArmorType.LEGGINGS.getDurability(MinerArmorMaterial.BASE_DURABILITY)));
 
     public static final Item MINER_BOOTS = registerItem("miner_boots", Item::new, new Item.Properties()
-            .humanoidArmor(MinerArmorMaterial.INSTANCE, ArmorType.BOOTS).durability(MinerArmorMaterial.BASE_DURABILITY));
+            .humanoidArmor(MinerArmorMaterial.INSTANCE, ArmorType.BOOTS)
+            .durability(ArmorType.BOOTS.getDurability(MinerArmorMaterial.BASE_DURABILITY)));
 
     public static final Item FORTUNE_HELMET = registerItem("fortune_helmet", Item::new, new Item.Properties()
-            .humanoidArmor(FortuneArmorMaterial.INSTANCE, ArmorType.HELMET).durability(FortuneArmorMaterial.BASE_DURABILITY));
+            .humanoidArmor(FortuneArmorMaterial.INSTANCE, ArmorType.HELMET)
+            .durability(ArmorType.HELMET.getDurability(FortuneArmorMaterial.BASE_DURABILITY)));
 
     public static final Item FORTUNE_CHESTPLATE = registerItem("fortune_chestplate", Item::new, new Item.Properties()
-            .humanoidArmor(FortuneArmorMaterial.INSTANCE, ArmorType.CHESTPLATE).durability(FortuneArmorMaterial.BASE_DURABILITY));
+            .humanoidArmor(FortuneArmorMaterial.INSTANCE, ArmorType.CHESTPLATE)
+            .durability(ArmorType.CHESTPLATE.getDurability(FortuneArmorMaterial.BASE_DURABILITY)));
 
     public static final Item FORTUNE_LEGGINGS = registerItem("fortune_leggings", Item::new, new Item.Properties()
-            .humanoidArmor(FortuneArmorMaterial.INSTANCE, ArmorType.LEGGINGS).durability(FortuneArmorMaterial.BASE_DURABILITY));
+            .humanoidArmor(FortuneArmorMaterial.INSTANCE, ArmorType.LEGGINGS)
+            .durability(ArmorType.LEGGINGS.getDurability(FortuneArmorMaterial.BASE_DURABILITY)));
 
     public static final Item FORTUNE_BOOTS = registerItem("fortune_boots", Item::new, new Item.Properties()
-            .humanoidArmor(FortuneArmorMaterial.INSTANCE, ArmorType.BOOTS).durability(FortuneArmorMaterial.BASE_DURABILITY));
+            .humanoidArmor(FortuneArmorMaterial.INSTANCE, ArmorType.BOOTS)
+            .durability(ArmorType.BOOTS.getDurability(SpeedyArmorMaterial.BASE_DURABILITY)));
 
     private static <T extends Item> Item registerItem(
             String name,
