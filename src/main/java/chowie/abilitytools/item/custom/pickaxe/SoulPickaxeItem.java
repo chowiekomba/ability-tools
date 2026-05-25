@@ -1,7 +1,5 @@
 package chowie.abilitytools.item.custom.pickaxe;
 
-import net.fabricmc.fabric.api.event.Event;
-import net.fabricmc.fabric.api.loot.v3.LootTableEvents;
 import net.fabricmc.fabric.api.tag.convention.v2.ConventionalBlockTags;
 import net.minecraft.core.BlockPos;
 import net.minecraft.network.chat.Component;
@@ -16,7 +14,6 @@ import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
-import net.minecraft.world.level.storage.loot.LootParams;
 import net.minecraft.world.phys.AABB;
 
 import java.util.List;
@@ -33,18 +30,16 @@ public class SoulPickaxeItem extends Item {
             if (state.is(ConventionalBlockTags.ORES)) {
                 List<Entity> entityList = level.getEntities(owner, AABB.ofSize(owner.getOnPos().getCenter(), 50, 50, 50));
 
-                entityList.forEach(i -> {
-                    if (!(i instanceof LivingEntity)) {
-                        entityList.remove(i);
-                    }
-                });
+                if (!entityList.isEmpty()) {
+                    entityList.removeIf(i -> !(i instanceof LivingEntity));
 
-                int bonus = entityList.size() / 2;
-                List<ItemStack> lootTable = Block.getDrops(state, serverLevel, pos, null);
+                    int bonus = Math.min(entityList.size() / 2, 10);
+                    List<ItemStack> lootTable = Block.getDrops(state, serverLevel, pos, null);
                     lootTable.forEach(j -> {
                         j.setCount(bonus);
                         level.addFreshEntity(new ItemEntity(level, pos.getX(), pos.getY(), pos.getZ(), j));
                     });
+                }
             }
         }
 

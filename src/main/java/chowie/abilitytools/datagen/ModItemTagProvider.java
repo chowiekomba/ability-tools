@@ -48,16 +48,24 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
                 .add(ModItems.MULTI_BOW);
 
         valueLookupBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE)
-                .add(ModItems.SPEEDY_HELMET);
+                .add(ModItems.SPEEDY_HELMET)
+                .add(ModItems.FORTUNE_HELMET)
+                .add(ModItems.MINER_HELMET);
 
         valueLookupBuilder(ItemTags.CHEST_ARMOR_ENCHANTABLE)
-                .add(ModItems.SPEEDY_CHESTPLATE);
+                .add(ModItems.SPEEDY_CHESTPLATE)
+                .add(ModItems.FORTUNE_CHESTPLATE)
+                .add(ModItems.MINER_CHESTPLATE);
 
         valueLookupBuilder(ItemTags.LEG_ARMOR_ENCHANTABLE)
-                .add(ModItems.SPEEDY_LEGGINGS);
+                .add(ModItems.SPEEDY_LEGGINGS)
+                .add(ModItems.FORTUNE_LEGGINGS)
+                .add(ModItems.MINER_LEGGINGS);
 
         valueLookupBuilder(ItemTags.FOOT_ARMOR_ENCHANTABLE)
-                .add(ModItems.SPEEDY_BOOTS);
+                .add(ModItems.SPEEDY_BOOTS)
+                .add(ModItems.FORTUNE_BOOTS)
+                .add(ModItems.MINER_BOOTS);
 
         valueLookupBuilder(SpeedyArmorMaterial.REPAIRS_SPEEDY_ARMOR)
                 .add(Items.HAY_BLOCK);

@@ -9,11 +9,13 @@ import net.minecraft.world.item.BowItem;
 import net.minecraft.world.item.ItemStack;
 import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
+import net.minecraft.world.item.component.UseCooldown;
 import net.minecraft.world.level.Level;
 
 import java.util.function.Consumer;
 
 public class TntBowItem extends BowItem {
+    private final UseCooldown cooldown = new UseCooldown(5.0F);
     public TntBowItem(Properties properties) {
         super(properties);
     }
@@ -30,6 +32,7 @@ public class TntBowItem extends BowItem {
         if (isCrit) {
             arrowx.setCritArrow(true);
         }
+        cooldown.apply(weapon, shooter);
         return arrowx;
     }
 }
