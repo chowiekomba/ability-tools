@@ -6,6 +6,7 @@ import net.minecraft.core.particles.ParticleTypes;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.entity.LivingEntity;
+import org.jspecify.annotations.NonNull;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -19,10 +20,12 @@ public class AftershockTimer implements ServerTickEvents.EndTick {
     }
 
     @Override
-    public void onEndTick(MinecraftServer server) {
+    public void onEndTick(@NonNull MinecraftServer server) {
+        for (LivingEntity entity : entityMap.keySet()) {
+            entityMap.compute(entity, (_, l) -> l - 1);
+        }
         for (LivingEntity entity : entityMap.keySet()) {
             long l = entityMap.get(entity);
-            entityMap.put(entity, l - 1);
 
             if (l % 20 == 0 && l != 0) {
                 if (entity.level() instanceof ServerLevel serverLevel) {
@@ -31,17 +34,17 @@ public class AftershockTimer implements ServerTickEvents.EndTick {
                 }
             }
 
-            if (l == 0L) {
+            if (l <= 0) {
                 if (entity.level() instanceof ServerLevel serverLevel) {
                     entity.hurtServer(serverLevel, entity.damageSources().generic(), 4);
                 }
-                entityMap.remove(entity);
             }
         }
+        entityMap.keySet().removeIf(i -> entityMap.get(i) <= 0);
     }
 
     public static void register() {
-        AbilityTools.LOGGER.info("Registering FireStickItem for " + AbilityTools.MOD_ID);
+        AbilityTools.LOGGER.info("Registering AftershockTimer for " + AbilityTools.MOD_ID);
         ServerTickEvents.END_SERVER_TICK.register(INSTANCE);
     }
 }

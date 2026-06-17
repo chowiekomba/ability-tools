@@ -11,6 +11,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import org.jspecify.annotations.NonNull;
 
 import java.util.HashMap;
 import java.util.List;
@@ -25,7 +26,7 @@ public class FireStickItemTimer implements ServerTickEvents.EndTick {
     }
 
     @Override
-    public void onEndTick(MinecraftServer server) {
+    public void onEndTick(@NonNull MinecraftServer server) {
         final double radius = 5;
         final double times = 100;
         for (ServerPlayer player : playerMap.keySet()) {
@@ -62,7 +63,7 @@ public class FireStickItemTimer implements ServerTickEvents.EndTick {
     }
 
     public static void register() {
-        AbilityTools.LOGGER.info("Registering FireStickItem for " + AbilityTools.MOD_ID);
+        AbilityTools.LOGGER.info("Registering FireStickItemTimer for " + AbilityTools.MOD_ID);
         ServerTickEvents.END_SERVER_TICK.register(INSTANCE);
     }
 }

@@ -15,6 +15,7 @@ import net.minecraft.world.entity.Entity;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.phys.AABB;
 import net.minecraft.world.phys.Vec3;
+import org.jspecify.annotations.NonNull;
 
 import java.util.HashMap;
 import java.util.List;
@@ -29,7 +30,7 @@ public class FreezeStickItemTimer implements ServerTickEvents.EndTick {
     }
 
     @Override
-    public void onEndTick(MinecraftServer server) {
+    public void onEndTick(@NonNull MinecraftServer server) {
         final double radius = 3;
         final double times = 100;
         for (ServerPlayer player : playerMap.keySet()) {
@@ -64,7 +65,7 @@ public class FreezeStickItemTimer implements ServerTickEvents.EndTick {
     }
 
     public static void register() {
-        AbilityTools.LOGGER.info("Registering FreezeStickItem for " + AbilityTools.MOD_ID);
+        AbilityTools.LOGGER.info("Registering FreezeStickItemTimer for " + AbilityTools.MOD_ID);
         ServerTickEvents.END_SERVER_TICK.register(INSTANCE);
     }
 }
