@@ -33,7 +33,7 @@ public class RoidRageGunItem extends ProjectileWeaponItem {
 
     @Override
     public @NonNull Predicate<ItemStack> getAllSupportedProjectiles() {
-        return itemStack -> itemStack.is(ItemTags.COPPER_GOLEM_STATUES);
+        return itemStack -> itemStack.is(ItemTags.CREEPER_DROP_MUSIC_DISCS);
     }
 
     @Override

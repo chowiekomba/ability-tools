@@ -6,7 +6,7 @@ import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResult;
-import net.minecraft.world.entity.EntityType;
+import net.minecraft.world.entity.EntityTypes;
 import net.minecraft.world.entity.LightningBolt;
 import net.minecraft.world.entity.LivingEntity;
 import net.minecraft.world.entity.player.Player;
@@ -16,6 +16,7 @@ import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.item.component.TooltipDisplay;
 import net.minecraft.world.item.component.UseCooldown;
 import net.minecraft.world.level.Level;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.function.Consumer;
 
@@ -51,8 +52,8 @@ public class LightningStickItem extends Item {
 
             BlockPos posOfLightning = centerPos.offset((int) xOffset, 0, (int) zOffset);
 
-            LightningBolt lightningBolt = new LightningBolt(EntityType.LIGHTNING_BOLT, level);
-            lightningBolt.setPos(posOfLightning.getCenter());
+            LightningBolt lightningBolt = new LightningBolt(EntityTypes.LIGHTNING_BOLT, level);
+            lightningBolt.setPos(new Vec3(posOfLightning));
             level.addFreshEntity(lightningBolt);
             level.playSound(null, posOfLightning, SoundEvents.LIGHTNING_BOLT_THUNDER, SoundSource.PLAYERS);
         }
@@ -71,8 +72,8 @@ public class LightningStickItem extends Item {
             return;
         }
 
-        LightningBolt lightningBolt = new LightningBolt(EntityType.LIGHTNING_BOLT, attacker.level());
-        lightningBolt.setPos(mob.blockPosition().getCenter());
+        LightningBolt lightningBolt = new LightningBolt(EntityTypes.LIGHTNING_BOLT, attacker.level());
+        lightningBolt.setPos(new Vec3(mob.blockPosition()));
         attacker.level().addFreshEntity(lightningBolt);
         attacker.level().playSound(null, mob.getOnPos(), SoundEvents.LIGHTNING_BOLT_THUNDER, SoundSource.PLAYERS);
 

@@ -1,14 +1,15 @@
 package chowie.abilitytools.datagen;
 
-import chowie.abilitytools.item.ModItems;
+import chowie.abilitytools.item.ModItemIds;
 import chowie.abilitytools.item.custom.armor.FortuneArmorMaterial;
 import chowie.abilitytools.item.custom.armor.MinerArmorMaterial;
 import chowie.abilitytools.item.custom.armor.SpeedyArmorMaterial;
 import net.fabricmc.fabric.api.datagen.v1.FabricPackOutput;
 import net.fabricmc.fabric.api.datagen.v1.provider.FabricTagsProvider;
 import net.minecraft.core.HolderLookup;
+import net.minecraft.references.BlockItemIds;
+import net.minecraft.references.ItemIds;
 import net.minecraft.tags.ItemTags;
-import net.minecraft.world.item.Items;
 
 import java.util.concurrent.CompletableFuture;
 
@@ -19,69 +20,69 @@ public class ModItemTagProvider extends FabricTagsProvider.ItemTagsProvider {
 
     @Override
     protected void addTags(HolderLookup.Provider registries) {
-        valueLookupBuilder(ItemTags.SWORDS)
-                .add(ModItems.SPEEDY_SWORD)
-                .add(ModItems.ROID_RAGE_SWORD)
-                .add(ModItems.MULTI_SWORD)
-                .add(ModItems.SPEEDY_SWORD)
-                .add(ModItems.ENDER_SWORD)
-                .add(ModItems.HEAL_SWORD)
-                .add(ModItems.GROUP_HEAL_SWORD)
-                .add(ModItems.GROUND_SLAM_DAGGER)
-                .add(ModItems.MONEY_SWORD)
-                .add(ModItems.JUMP_SWORD);
+        builder(ItemTags.SWORDS)
+                .add(ModItemIds.speedySword)
+                .add(ModItemIds.roidRageSword)
+                .add(ModItemIds.multiSword)
+                .add(ModItemIds.speedySword)
+                .add(ModItemIds.enderSword)
+                .add(ModItemIds.healSword)
+                .add(ModItemIds.groupHealSword)
+                .add(ModItemIds.groundSlamDagger)
+                .add(ModItemIds.moneySword)
+                .add(ModItemIds.jumpSword);
 
-        valueLookupBuilder(ItemTags.PICKAXES)
-                .add(ModItems.EXPERIENCE_PICKAXE)
-                .add(ModItems.SOUL_PICKAXE)
-                .add(ModItems.PROGRESSIVE_PICKAXE);
+        builder(ItemTags.PICKAXES)
+                .add(ModItemIds.experiencePickaxe)
+                .add(ModItemIds.soulPickaxe)
+                .add(ModItemIds.progressivePickaxe);
 
-        valueLookupBuilder(ItemTags.AXES)
-                .add(ModItems.EXPERIENCE_AXE);
+        builder(ItemTags.AXES)
+                .add(ModItemIds.experienceAxe);
 
-        valueLookupBuilder(ItemTags.BOW_ENCHANTABLE)
-                .add(ModItems.FAST_BOW)
-                .add(ModItems.ROID_RAGE_BOW)
-                .add(ModItems.END_BOW)
-                .add(ModItems.TNT_BOW)
-                .add(ModItems.AFTERSHOCK_BOW)
-                .add(ModItems.MULTI_BOW);
+        builder(ItemTags.BOW_ENCHANTABLE)
+                .add(ModItemIds.fastBow)
+                .add(ModItemIds.roidRageBow)
+                .add(ModItemIds.endBow)
+                .add(ModItemIds.tntBow)
+                .add(ModItemIds.aftershockBow)
+                .add(ModItemIds.multiBow);
 
-        valueLookupBuilder(ItemTags.HEAD_ARMOR_ENCHANTABLE)
-                .add(ModItems.SPEEDY_HELMET)
-                .add(ModItems.FORTUNE_HELMET)
-                .add(ModItems.MINER_HELMET);
+        builder(ItemTags.HEAD_ARMOR_ENCHANTABLE)
+                .add(ModItemIds.speedyHelmet)
+                .add(ModItemIds.fortuneHelmet)
+                .add(ModItemIds.minerHelmet);
 
-        valueLookupBuilder(ItemTags.CHEST_ARMOR_ENCHANTABLE)
-                .add(ModItems.SPEEDY_CHESTPLATE)
-                .add(ModItems.FORTUNE_CHESTPLATE)
-                .add(ModItems.MINER_CHESTPLATE);
+        builder(ItemTags.CHEST_ARMOR_ENCHANTABLE)
+                .add(ModItemIds.speedyChestplate)
+                .add(ModItemIds.fortuneChestplate)
+                .add(ModItemIds.minerChestplate);
 
-        valueLookupBuilder(ItemTags.LEG_ARMOR_ENCHANTABLE)
-                .add(ModItems.SPEEDY_LEGGINGS)
-                .add(ModItems.FORTUNE_LEGGINGS)
-                .add(ModItems.MINER_LEGGINGS);
+        builder(ItemTags.LEG_ARMOR_ENCHANTABLE)
+                .add(ModItemIds.speedyLeggings)
+                .add(ModItemIds.fortuneLeggings)
+                .add(ModItemIds.minerLeggings);
 
-        valueLookupBuilder(ItemTags.FOOT_ARMOR_ENCHANTABLE)
-                .add(ModItems.SPEEDY_BOOTS)
-                .add(ModItems.FORTUNE_BOOTS)
-                .add(ModItems.MINER_BOOTS);
+        builder(ItemTags.FOOT_ARMOR_ENCHANTABLE)
+                .add(ModItemIds.speedyBoots)
+                .add(ModItemIds.fortuneBoots)
+                .add(ModItemIds.minerBoots);
 
-        valueLookupBuilder(SpeedyArmorMaterial.REPAIRS_SPEEDY_ARMOR)
-                .add(Items.HAY_BLOCK);
+        builder(SpeedyArmorMaterial.REPAIRS_SPEEDY_ARMOR)
+                .add(BlockItemIds.HAY_BLOCK);
 
-        valueLookupBuilder(MinerArmorMaterial.REPAIRS_MINER_ARMOR)
-                .add(Items.COAL)
-                .add(Items.EMERALD);
+        builder(MinerArmorMaterial.REPAIRS_MINER_ARMOR)
+                .add(ItemIds.COAL)
+                .add(ItemIds.EMERALD);
 
-        valueLookupBuilder(FortuneArmorMaterial.REPAIRS_FORTUNE_ARMOR)
-                .add(Items.TUFF)
-                .add(Items.DIAMOND);
+        builder(FortuneArmorMaterial.REPAIRS_FORTUNE_ARMOR)
+                .add(BlockItemIds.TUFF)
+                .add(ItemIds.DIAMOND);
 
-        valueLookupBuilder(ItemTags.PIGLIN_SAFE_ARMOR)
-                .add(ModItems.SPEEDY_HELMET)
-                .add(ModItems.SPEEDY_CHESTPLATE)
-                .add(ModItems.SPEEDY_LEGGINGS)
-                .add(ModItems.SPEEDY_BOOTS);
+        builder(ItemTags.PIGLIN_SAFE_ARMOR)
+                .add(ModItemIds.speedyHelmet)
+                .add(ModItemIds.speedyChestplate)
+                .add(ModItemIds.speedyLeggings)
+                .add(ModItemIds.speedyBoots);
     }
 }

@@ -15,6 +15,7 @@ import net.minecraft.world.level.Level;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockState;
 import net.minecraft.world.phys.AABB;
+import net.minecraft.world.phys.Vec3;
 
 import java.util.List;
 import java.util.function.Consumer;
@@ -28,7 +29,7 @@ public class SoulPickaxeItem extends Item {
     public boolean mineBlock(ItemStack itemStack, Level level, BlockState state, BlockPos pos, LivingEntity owner) {
         if (level instanceof ServerLevel serverLevel) {
             if (state.is(ConventionalBlockTags.ORES)) {
-                List<Entity> entityList = level.getEntities(owner, AABB.ofSize(owner.getOnPos().getCenter(), 50, 50, 50));
+                List<Entity> entityList = level.getEntities(owner, AABB.ofSize(new Vec3(owner.getOnPos()), 50, 50, 50));
 
                 if (!entityList.isEmpty()) {
                     entityList.removeIf(i -> !(i instanceof LivingEntity));
